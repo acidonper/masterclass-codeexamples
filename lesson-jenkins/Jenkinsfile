@@ -10,8 +10,8 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sh PATH=$PATH:/usr/local/bin
-        echo $PATH
+        sh export PATH=$PATH:/usr/local/bin
+        sh echo $PATH
         app = docker.build("getintodevops/hellonode")
     }
 
